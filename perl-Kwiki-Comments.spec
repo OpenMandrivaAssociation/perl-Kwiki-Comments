@@ -1,15 +1,13 @@
 %define upstream_name	 Kwiki-Comments
-%define upstream_version 0.06
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	0.06
+Release:	5
 
 Summary:	Post comments to a page
 License:	GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Kwiki/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Kwiki/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -21,7 +19,7 @@ Kwiki::Comments is a Kwiki plugin that allow anyone to leave comments to a
 Page, just like Slash comments or MT comments.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -42,9 +40,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %changelog
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.60.0-1mdv2010.0
 + Revision: 403376
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.06-6mdv2009.0
+- rebuild using %0.06 Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.06-6mdv2009.0
 + Revision: 241569
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
